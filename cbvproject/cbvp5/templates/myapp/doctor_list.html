@@ -1,0 +1,53 @@
+{%extends 'myapp/base.html'%}
+
+
+{%block body_block%}
+
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-7">
+                
+                {%if doctor_list%}
+                <table class="table table-bordered table-striped table-hover">
+                    <thead class="bg-success text-white" >
+                        <tr>
+                            <th>Doctor id</th>
+                            <th>Doctor Name</th>
+                            <th>Doctor Desc</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for doc in doctor_list%}
+                        <tr>
+                            <td>{{doc.DocterID}}</td>
+                            <td>{{doc.DoctorName}}</td>
+                            <td>{{doc.DoctorDesc}}</td>
+                            <td>
+                                <a href="/{{doc.id}}">
+                                            <li class="fa fa-eye fs-4 text-primary mr-2"></li>
+                                        </a>
+                                        
+                                        <a href="/edit/{{doc.id}}">
+                                            <li class="fa fa-edit text-success mr-2"></li>
+                                        </a>
+                                        <a href="/delete/{{doc.id}}">
+                                            <li class="fa fa-trash-alt fa-1x text-danger mr-2"></li>
+                                        </a>
+                                </td>
+                        </tr>
+
+                        {%endfor%}
+                    </tbody>
+                </table>
+                {%else%}
+                <p class="h1 text-danger text-center">Records Not Found</p>
+                
+                {%endif%}
+                <a href="/create" class="btn btn-sm btn-outline-success">Create</a>
+
+            </div>
+        </div>
+    </div>
+{%endblock%}

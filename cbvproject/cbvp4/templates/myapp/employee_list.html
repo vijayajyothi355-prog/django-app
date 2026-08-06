@@ -1,0 +1,52 @@
+{%extends 'myapp/base.html'%}
+
+{%block body_block%}
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-7">
+                
+                {%if employee_list%}
+                <table class="table table-bordered table-striped table-hover">
+                    <thead class="table-dark text-white" >
+                        <tr>
+                            <th>Employee id</th>
+                            <th>Employee Name</th>
+                            <th>Employee Salary</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for emp in employee_list%}
+                        <tr>
+                            <td>{{emp.EmpId}}</td>
+                            <td>{{emp.EmpName}}</td>
+                            <td>{{emp.EmpSal}}</td>
+                            <td>
+                                <a href="/{{emp.id}}">
+                                            <li class="fa fa-eye fs-4 text-primary mr-2"></li>
+                                        </a>
+                                        
+                                        <a href="/edit/{{emp.id}}">
+                                            <li class="fa fa-edit text-success mr-2"></li>
+                                        </a>
+                                        <a href="/delete/{{emp.id}}">
+                                            <li class="fa fa-trash-alt fa-1x text-danger mr-2"></li>
+                                        </a>
+                                </td>
+                        </tr>
+
+                        {%endfor%}
+                    </tbody>
+                </table>
+                {%else%}
+                <p class="h1 text-danger text-center">Records Not Found</p>
+                
+                {%endif%}
+                <a href="/create" class="btn btn-sm btn-outline-primary">Create</a>
+
+            </div>
+        </div>
+    </div>
+</body>
+{%endblock%}

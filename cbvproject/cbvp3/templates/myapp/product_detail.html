@@ -1,0 +1,57 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+{%block body_block%}
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+                <div class="card shadow-lg mt-5">
+                    <div class="card-header bg-primary text-white text-center">
+                        <p class="h2">Product Information</p>
+                    
+
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="font-weight-bold fw-bold">ProId:{{product.ProID}}</span>
+
+                            </li>
+                            <li class="list-group-item fw-bold">
+                                <span class="font-weight-bold">productName:{{product.ProName}}</span>
+
+                            </li>
+                            <li class="list-group-item fw-bold">
+                                <span class="font-weight-bold">Productprice:{{product.ProPrice}}</span>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <div class="card-footer">
+
+    <div class="d-flex justify-content-between mb-3">
+        <a href="/edit/{{ product.id}}">
+            <i class="fa fa-edit text-success fs-4 fa-2x"></i>
+        </a>
+
+        <a href="/delete/{{ product.id}}">
+            <i class="fa fa-trash-alt text-danger fs-4 fa-2x"></i>
+        </a>
+    </div>
+
+    <a href="/" class="btn btn-warning w-100">
+        Back
+    </a>
+
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+{%endblock%}

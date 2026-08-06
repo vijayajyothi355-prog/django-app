@@ -1,0 +1,53 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+
+{%block body_block%}
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+                <div class="card shadow-lg mt-5">
+                    <div class="card-header bg-primary text-white text-center">
+                        <p class="h2">Do You Want to delete Product </p>
+                    
+
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="font-weight-bold fw-bold">ProID:{{product.ProID}}</span>
+
+                            </li>
+                            <li class="list-group-item fw-bold">
+                                <span class="font-weight-bold">ProName:{{product.ProName}}</span>
+
+                            </li>
+                            <li class="list-group-item fw-bold">
+                                <span class="font-weight-bold">ProPrice:{{product.ProPrice}}</span>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <div class="card-footer">
+                        <form action="" method="post">
+                            {%csrf_token%}
+                            <p>
+                            <button class="btn btn-md btn-danger float-start">Yes</button>
+                        
+                        <a href="/" class="btn btn-warning btn-md float-right">No
+
+                        </a>
+                        </p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+{%endblock%}

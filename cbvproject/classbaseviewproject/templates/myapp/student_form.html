@@ -1,0 +1,54 @@
+{%load widget_tweaks%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- MDBootstrap 4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css">
+    <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="fontawesome-free-7.1.0-web/fontawesome-free-7.1.0-web/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+<div class="card shadow-lg">
+    <div class="card-header text-center bg-secondary text-white">
+        <p class="h1">Register Student</p>
+
+    </div>
+    <div class="card-body">
+        <form method="POST">
+            {%csrf_token%}
+<label for="" class="form-label">Student Id</label>
+{%render_field form.StuID class="form-control mt-2" placeholder="student id"%}
+<label for="" class="form-label">Student Name</label>
+{%render_field form.StuName class="form-control mt-2" placeholder="student Name"%}
+<label for="" class="form-label">Student Marks</label>
+{%render_field form.StuMarks class="form-control" placeholder="student Marks"%}
+<button class="btn btn-secondary">Create</button>
+<a href="/" class="btn btn-warning">Back</a>
+        </form>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+
+
+    
+</body>
+</html>

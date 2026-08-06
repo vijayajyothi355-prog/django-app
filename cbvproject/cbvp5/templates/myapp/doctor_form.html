@@ -1,0 +1,46 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+
+{%block body_block%}
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+                <div class="card shadow-lg">
+                    <div class="card-header text-center text-white bg-success">
+                        <p class="h1">Register Doctor</p>
+
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post">
+                            {%csrf_token%}
+                                <div class="mb-3">
+                                    <label class="form-label">Doctor ID</label>
+                                    {% render_field form.DocterID class="form-control " %}
+                                 </div>
+                                 <div class="mb-3">
+                                    <label class="form-label">Doctor Name</label>
+                                    {% render_field form.DoctorName class="form-control " %}
+                                 </div>
+                                 <div class="mb-3">
+                                    <label class="form-label">Doctor Desc</label>
+                                    {% render_field form.DoctorDesc class="form-control " %}
+                                 </div>
+    
+                           <button class="btn btn-success w-100 ">
+                                                           save
+                           </button>
+                           <a href="/" class="btn btn-primary w-100 mt-2">
+                                               Back
+                                                 </a>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+{%endblock%}

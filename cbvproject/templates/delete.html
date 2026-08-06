@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%load widget_tweaks%}
+{%block body_block%}
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+<div class="card">
+    <div class="card-footer">
+
+        <form method="POST">
+            {%csrf_token%}
+            <p>
+                Do you want to delete?
+                <button>yes</button>
+                <button><a href="/employees">No</a></button>
+            </p>
+
+        </form>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{%endblock%}

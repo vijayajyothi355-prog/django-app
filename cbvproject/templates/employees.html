@@ -1,0 +1,56 @@
+{%extends 'base.html'%}
+{%block body_block%}
+<div>
+    <p class="h1 text-center text-success">Employees</p> 
+</div>
+
+   
+    <div class="container">
+        <div class="row d-flex justify-content-center mt-5">
+            <div class="col-md-10">
+                {%if EmpList%}
+                    <table class="table table-bordered table-striped table-hover text-center">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th>Employee ID</th>
+                                <th>Employee Name</th>
+                                <th>Employee Salary</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for emp in EmpList%}
+                                <tr>
+                                    <td>{{emp.EmpId}}</td>
+                                    <td>{{emp.EmpName}}</td>
+                                    <td>{{emp.EmpSal}}</td>
+                                    <td>
+                                        <a href="/find/{{emp.EmpId}}">
+                                            <i class="fa fa-eye fa-1x text-primary mr-2"></i>
+                                        </a>
+                                        <a href="/edit/{{emp.EmpId}}">
+                                            <i class="fa fa-edit text-success mr-2"></i>
+                                        </a>
+                                        
+                                           <a href="/delete/{{emp.EmpId}}"> <i class="fa fa-trash-alt  text-danger mr-2" onclick=""></i></a>
+                                        
+                                        
+                                         
+                                    
+                                    
+                                    </td>
+                                </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                {%else%}
+                <p class="h3 text-danger text-center">Records Not Found</p>
+                {%endif%}
+            </div>
+        </div>
+    </div>
+
+
+
+
+{%endblock%}
