@@ -1,0 +1,27 @@
+{%extends 'myapp/base.html'%}
+{%block body_block%}
+
+    <p class="h1 text-center text-secondary">Find page</p>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+<div class="card">
+    <div class="card-header text-center text-white bg-primary">
+        <p class="h3">Employee</p>
+    </div>
+    <div class="card-body">
+        <p class="h3">Employee id:{{emp.EmpId}}</p>
+        <p class="h3">Employee name:{{emp.EmpName}}</p>
+        <p class="h3">Employee salary:{{emp.EmpSal}}</p>
+    </div>
+    <div class="card-footer">
+        <a href="/" class="btn btn-sm btn-outline-deep-orange">Home</a>
+        <a href="/employees" class="btn btn-sm btn-outline-dark-green float-right">Back</a>
+
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+
+        {%endblock%}

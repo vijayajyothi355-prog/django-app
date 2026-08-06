@@ -1,0 +1,29 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+{%block body_block%}
+<p class="text-white h1 text-warning text-center">Register Page</p>
+<form action="" method="POST">
+    {%csrf_token%}
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header bg-warning text-white text-center">
+                            <p class="h3"><i class="fas fa-user "></i>
+                                Create Student</p>
+                    </div>
+                    <div class="card-body">
+                        {{Form.StuId|add_class:"form-control mt-2"|attr:"placeholder:Student ID"}}
+                        {{Form.StuName|add_class:"form-control mt-2"|attr:"placeholder:Student Name"}}
+                        {{Form.StuMarks|add_class:"form-control mt-2"|attr:"placeholder:Student Marks"}}
+                        {{Form.StuImage|add_class:"form-control mt-2"|attr:"placeholder:Student Image"}}
+                         
+                 <div class="text-center"><button class="btn btn-primary btn-sm mt-2 rounded-pill">Register</button>
+                <button class="btn btn-primary btn-sm mt-2 rounded-pill"><a href="/students" class="text-white">Back</a></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{%endblock%}

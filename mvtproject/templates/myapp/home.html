@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- MDBootstrap 4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css">
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+</head>
+<body>
+    <div class="cotainer">
+        {%if Stulist%}
+        <table class="table table-bordered table-striped text-center animate__animated animate__swing mt-5">
+            <thead class="bg-primary text-white">
+                <th>
+                    StudentId
+                </th>
+                <th>
+                    StudentName
+                </th>
+                <th>
+                    StudentMarks
+                </th>
+            </thead>
+            <tbody class="bg-success text-white">
+                {%for stu in Stulist%}
+                <tr>
+                    <td>{{stu.StuID}}</td>
+                
+                
+                    <td>{{stu.StuName}}</td>
+                
+                
+                    <td>{{stu.StuMarks}}</td>
+                </tr>
+                {%endfor%}
+                   
+            </tbody>
+        </table>
+        
+        {%endif%}
+    </div>
+</body>
+</html>

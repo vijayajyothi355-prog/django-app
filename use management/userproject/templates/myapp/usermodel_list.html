@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- MDBootstrap 4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css">
+
+</head>
+<body>
+    <h1 style="text-align: center;">Userlist</h1>
+    <a href="create/">create</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                {%if usermodel_list%}
+                <table class="table table-bordered table-striped table-hover;">
+                    <thead class="bg-primary text-white">
+<th>First name</th>
+<th>Last name</th>
+<th>user name</th>
+<th>email id</th>
+                    </thead>
+                    <tbody>
+{% for user in usermodel_list%}
+<tr>
+    <td>{{user.first_name}}</td>
+    <td>{{user.last_name}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.email}}</td>
+</tr>
+{%endfor%}
+                    </tbody>
+                </table>
+                {%else%}
+                {%endif%}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{%extends 'myapp/base.html'%}
+{%load static%}
+{%block body_block%}
+<div class="container">
+    <p class="h1 text-center text-primary">home page</p>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'images/img3.jpg'%}" class="img-fluid" alt="">
+                <div class="card-body">
+                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, error!</p>
+                    <button class="btn btn-sm btn-amber">readmore</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'images/img4.jpg'%}" class="img-fluid pb-3" alt="">
+                <div class="card-body">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, error!</p>
+                    <button class="btn btn-sm btn-amber">readmore</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'images/img5.jpg'%}" class="img-fluid" alt="">
+                <div class="card-body">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, error!</p>
+                    <button class="btn btn-sm btn-amber">readmore</button>
+                </div>
+            </div>
+        </div>
+    <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'images/img6.jpg'%}" class="img-fluid " alt="">
+                <div class="card-body">
+                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, error!</p>
+                    <button class="btn btn-sm btn-amber">readmore</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    </div>
+</div>
+{%endblock%}

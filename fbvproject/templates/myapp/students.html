@@ -1,0 +1,56 @@
+{%extends 'myapp/base.html'%}
+
+{%block body_block%}
+<p class="text-white h1 text-success text-center">Students Page</p>
+<div class="container">
+        <div class="row d-flex justify-content-center mt-3">
+            <div class="col-md-10">
+                {%if stulist%}
+                    <table class="table table-bordered table-striped table-hover text-center">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Student Name</th>
+                                <th>Student Marks</th>
+                                <th>Action</th>
+                                <th>Student Image</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for stu in stulist%}
+                                <tr>
+                                    <td>{{stu.StuId}}</td>
+                                    <td>{{stu.StuName}}</td>
+                                    <td>{{stu.StuMarks}}</td>
+                                    
+                                    <td>
+                                        <a href="/login">
+                                            <i class="fa fa-eye fa-1x text-primary mr-2"></i>
+                                        </a>
+                                        <a href="/register">
+                                            <i class="fa fa-edit text-success mr-2"></i>
+                                        </a>
+                                        
+                                            <i class="fa fa-trash-alt  text-danger mr-2"></i>
+                                        
+                                        
+                                         
+                                    
+                                    
+                                    </td>
+                                    <td><img src='{{stu.StuImage}}'width="200px" height="200px"></td>
+                                </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                {%else%}
+                <p class="h3 text-danger text-center">Records Not Found</p>
+                {%endif%}
+            </div>
+        </div>
+    </div>
+
+
+
+
+{%endblock%}

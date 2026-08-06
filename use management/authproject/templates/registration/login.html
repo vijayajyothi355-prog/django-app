@@ -1,0 +1,30 @@
+{%extends 'myapp/base.html'%}
+{%block body_block%}
+<div class="container">
+    <p class="h1 text-center text-primary">Login page</p>
+<div class="row d-flex justify-content-center">
+    <div class="col-md-5">
+<div class="card">
+    <div class="card-header bg-primary text-center">
+<p class="h2">Login Here</p>
+    </div>
+   <form>
+     <div class="card-body">
+        <div class="mb-2">
+            <lable for="" class="label-form">Username</lable>
+            <input type="text" class="form-control" >
+            <lable for="" class="label-form">Password</lable>
+            <input type="password" class="form-control" >
+        </div>
+        <div class="mb-2">
+            <button class="btn btn-success w-100">Login</button>
+        </div>
+    </div>
+    <div class="form-label">Create Account?
+    <a href="/register">Register here</a></div>
+   </form>
+</div>
+    </div>
+</div>
+</div>
+{%endblock%}

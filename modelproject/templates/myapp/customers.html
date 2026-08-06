@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- MDBootstrap 4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css">
+    <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<body>
+    <div class="container mt-5">
+        {%if customers%}
+             
+                 <table  class="table table-bordered table-striped table-hover text-center">
+                    <thead>
+                        <tr class="bg-primary text-white ">
+                            <th  >
+                                user Id
+                            </th>
+                            <th>
+                                user Name
+                            </th>
+                            <th>
+                                user age
+                            </th>
+                            <th>
+                                user phone
+                            </th>
+                            <th>
+                                user gender
+                            </th>
+                            <th>
+                                user country
+                            </th>
+                            <th>
+                                user img
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for cus in customers%}
+                        <tr>
+                            <td>{{cus.id}}</td>
+                            <td>{{cus.Name}}</td>
+                            <td>{{cus.age}}</td>
+                            <td>{{cus.gender}}</td>
+                            <td>{{cus.phone}}</td>
+                            <td>{{cus.country}}</td>
+                            <td><img src="{{cus.imgurl}}" class="img-fluid img-thumbnail" style="height: 150px;"></td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                 </table>
+             
+        {%else%}
+             <p class="h1 text-success">records not found</p>
+        {%endif%}
+        
+    </div>
+</body>
+</html>
