@@ -1,6 +1,40 @@
 {%extends 'myapp/base.html'%}
 {%block body_block%}
-<div class="container">
-    <p class="h1 text-center text-success">Register page</p>
-</div>
+{%load widget_tweaks%}
+    <div class="container">
+          <div class="container">
+        <p class="h1 text-center text-primary">Login  Page</p>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">
+                        <p class="h2">Login Here</p>
+                    </div>
+                    <div class="card-body ">
+                       <form action="" method="POST">
+                         {%csrf_token%}
+                         <label  class="form-label">First Name</label>
+                         {% render_field form.first_name class="form-control mb-2"%}
+                         <label class="form-label">Second Name</label>
+                         {% render_field form.last_name class="form-control mb-2"%}
+                         <label class="form-label">username</label>
+                         {% render_field form.username class="form-control mb-2"%}
+                         <label class=" form-label">Password</label>
+                         {% render_field form.password type="password" class="form-control mb-2"%}
+                         <label class="form-label">Email</label>
+                         {% render_field form.email type="email" class="form-control mb-2"%}
+
+
+                        <div class="mb-2">
+                            <button class="btn  btn-success w-100">Register</button>
+
+                        </div>
+                          
+                       </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 {%endblock%}
