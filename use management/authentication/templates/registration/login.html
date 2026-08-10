@@ -1,0 +1,32 @@
+{%extends 'myapp/base.html'%}
+{%block body_block%}
+{%load widget_tweaks%}
+    <div class="container">
+        <p class="h1 text-center text-primary">Login  Page</p>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">
+                        <p class="h2">Login Here</p>
+                    </div>
+                    <div class="card-body">
+                       <form action="" method="POST">
+                        {%csrf_token%}
+                        
+                        <div class="mb-2">
+                            <label class="form-label">Username </label>
+                            {%render_field form.username class="form-control"%}
+                            <label class="form-label">Password </label>
+                            {%render_field form.password type="password" class="form-control"%}
+                            
+                        </div>
+                        <button class="btn btn-md btn-success w-100">Login</button>
+                        <label class="form-label">Don't you have account?  <a href="/create"> Create</a></label>
+                         
+                       </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}
