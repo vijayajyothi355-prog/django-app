@@ -1,0 +1,17 @@
+{
+  "employees": [
+    {
+      "eid": 113,
+      "ename": "jyothi",
+      "esal": 50000,
+      "id": "STpft91gP-k"
+    },
+    {
+      "eid": 112,
+      "ename": "pallavi",
+      "esal": 60000,
+      "id": "np980rar1nc"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
