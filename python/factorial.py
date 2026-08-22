@@ -1,7 +1,5 @@
 
-def factorial(n):
-    if n==0 or n==1:
-        return 1
-    return n*factorial(n-1)
-n=5
-print(factorial(n)) 
+a=3
+b=4
+sum=a+b
+print(sum)
